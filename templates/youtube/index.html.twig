@@ -4,16 +4,22 @@
 
 {% block container %}
 
-    <div class="row col-4 ">
-        {% for youtube in youtubes %}
-            <img src="{{ youtube.url|youtube_thumbnail }}" alt="{{youtube.name }}"></img>
-            <a href="{{ path('app_video', {id:youtube.id}) }}">{{ youtube.name }}</a>
-        {% endfor %}
-    </div>
     
     <div class="row mb-2" id="addVideo">
         <h1>Ajouter une vidéo !</h1>
         {{ form(form) }}
     </div>
-    
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for youtube in youtubes %}
+            <div class="col">
+                <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                    <a href="{{ path('app_video', {id:youtube.id}) }}"><img src="{{ youtube.url|youtube_thumbnail }}" class="card-img-top" alt="{{ youtube.name }}"></a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ youtube.name }}</h5>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

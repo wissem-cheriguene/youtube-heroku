@@ -15,3 +15,4 @@
         ]
 ```
 6. Ajouter le fichier .htaccess (= règles de réécriture Apache) `composer require symfony/apache-pack`
+7. Déployer sur le serveur `git push heroku main` :tada:
