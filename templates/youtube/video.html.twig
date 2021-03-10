@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ name }}{% endblock %}
+
+{% block container %}
+
+  <div>{{ url|youtube_video|raw }}</div>
+  <h1>{{ name }}</h1>
+
+{% endblock %}
